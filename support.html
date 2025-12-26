@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Support and Help for Warranty Manager Chrome Extension">
+    <title>Support - Warranty Manager</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <span class="logo-icon">🛡️</span>
+                <a href="index.html" class="logo-text">Warranty Manager</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="support.html" class="active">Support</a></li>
+                <li><a href="privacy.html">Privacy</a></li>
+                <li><a href="terms.html">Terms</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="support-page">
+        <div class="container">
+            <div class="support-content">
+                <h1>Support & Help</h1>
+                <p class="support-intro">Get help with Warranty Manager. Find answers to common questions or contact us for assistance.</p>
+
+                <section class="faq-section">
+                    <h2>Frequently Asked Questions</h2>
+                    
+                    <div class="faq-item">
+                        <h3>How do I install Warranty Manager?</h3>
+                        <div class="faq-answer">
+                            <p><strong>From Chrome Web Store (Recommended):</strong></p>
+                            <ol>
+                                <li>Visit the Chrome Web Store listing</li>
+                                <li>Click "Add to Chrome"</li>
+                                <li>Grant notification permission when prompted</li>
+                            </ol>
+                            <p><strong>Developer Installation:</strong></p>
+                            <ol>
+                                <li>Clone or download the repository</li>
+                                <li>Open Chrome and navigate to <code>chrome://extensions/</code></li>
+                                <li>Enable "Developer mode" (toggle in top right)</li>
+                                <li>Click "Load unpacked"</li>
+                                <li>Select the extension folder</li>
+                            </ol>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>How do I add a purchase?</h3>
+                        <div class="faq-answer">
+                            <ol>
+                                <li>Click the extension icon to open the popup</li>
+                                <li>Click "+ Add Purchase"</li>
+                                <li>Fill in all required fields:
+                                    <ul>
+                                        <li>Product Name (max 200 characters)</li>
+                                        <li>Purchase Price (0 to 999,999,999)</li>
+                                        <li>Purchase Date (cannot be in the future)</li>
+                                        <li>Store/Retailer (max 200 characters)</li>
+                                        <li>Warranty Period (1 to 36,500 days)</li>
+                                        <li>Receipt Photo (optional, max 5MB)</li>
+                                    </ul>
+                                </li>
+                                <li>Click "Save" to add the purchase</li>
+                            </ol>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>How do notifications work?</h3>
+                        <div class="faq-answer">
+                            <p>Warranty Manager sends browser notifications when warranties are expiring soon. The extension checks daily for expiring warranties and sends notifications based on your stored data.</p>
+                            <p>To test notifications, click "🔔 Test Notifications" in the extension popup. You can disable notifications at any time through Chrome's notification settings.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>Where is my data stored?</h3>
+                        <div class="faq-answer">
+                            <p>All your data is stored locally on your device using IndexedDB (a browser database). No data is transmitted to external servers. Your data never leaves your device.</p>
+                            <p>To export your data, use the "Export" feature in the extension to download your data as JSON or CSV.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>How do I export my data?</h3>
+                        <div class="faq-answer">
+                            <ol>
+                                <li>Open the extension popup</li>
+                                <li>Click the "Export" button</li>
+                                <li>Choose JSON or CSV format</li>
+                                <li>Your data will be downloaded to your device</li>
+                            </ol>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>How do I delete my data?</h3>
+                        <div class="faq-answer">
+                            <p>You can delete individual purchases from within the extension, or delete all data by:</p>
+                            <ol>
+                                <li>Uninstalling the extension, or</li>
+                                <li>Clearing your browser's IndexedDB data through Chrome settings</li>
+                            </ol>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>Is my data private?</h3>
+                        <div class="faq-answer">
+                            <p>Yes! Warranty Manager is designed with privacy as a top priority:</p>
+                            <ul>
+                                <li>All data is stored locally on your device</li>
+                                <li>No data is transmitted to external servers</li>
+                                <li>No tracking or analytics are performed</li>
+                                <li>No third-party services are used</li>
+                            </ul>
+                            <p>See our <a href="privacy.html">Privacy Policy</a> for more details.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>What permissions does the extension need?</h3>
+                        <div class="faq-answer">
+                            <p>Warranty Manager requires minimal permissions:</p>
+                            <ul>
+                                <li><strong>Notifications:</strong> To send alerts when warranties are expiring</li>
+                                <li><strong>Alarms:</strong> To schedule daily checks for expiring warranties</li>
+                            </ul>
+                            <p>All processing happens locally on your device.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>Can I use this extension offline?</h3>
+                        <div class="faq-answer">
+                            <p>Yes! Warranty Manager operates entirely offline. Once installed, you can use all features without an internet connection. The extension only needs internet access for initial installation from the Chrome Web Store.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="contact-section">
+                    <h2>Still Need Help?</h2>
+                    <p>If you can't find the answer you're looking for, please contact us:</p>
+                    <div class="contact-options">
+                        <div class="contact-card">
+                            <div class="contact-icon">📧</div>
+                            <h3>Chrome Web Store</h3>
+                            <p>Visit our Chrome Web Store listing and use the "Support" section to contact us.</p>
+                        </div>
+                        <div class="contact-card">
+                            <div class="contact-icon">💻</div>
+                            <h3>GitHub</h3>
+                            <p>Report issues or suggest features on our GitHub repository.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="resources-section">
+                    <h2>Additional Resources</h2>
+                    <div class="resources-grid">
+                        <a href="privacy.html" class="resource-card">
+                            <div class="resource-icon">🔒</div>
+                            <h3>Privacy Policy</h3>
+                            <p>Learn how we protect your data</p>
+                        </a>
+                        <a href="terms.html" class="resource-card">
+                            <div class="resource-icon">📄</div>
+                            <h3>Terms of Service</h3>
+                            <p>Read our terms and conditions</p>
+                        </a>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <span class="logo-icon">🛡️</span>
+                    <span class="logo-text">Warranty Manager</span>
+                </div>
+                <div class="footer-links">
+                    <a href="support.html">Support</a>
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="terms.html">Terms of Service</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Warranty Manager. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
+

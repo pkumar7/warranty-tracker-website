@@ -108,16 +108,3 @@ The extension uses:
 - `db.js` - IndexedDB operations (popup context)
 - `db-worker.js` - IndexedDB operations (service worker context)
 
-## Testing
-
-See [TESTING.md](TESTING.md) for testing warranty notifications.
-
-## Chrome Web Store Submission
-
-See [SUBMISSION_GUIDE.md](SUBMISSION_GUIDE.md) for detailed submission instructions.
-
-## License
-
-MIT
-
-

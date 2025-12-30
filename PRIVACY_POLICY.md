@@ -9,23 +9,33 @@ Warranty Manager ("we", "our", or "the extension") is committed to protecting yo
 ## Data Collection and Storage
 
 ### Local Storage Only
-- **All data is stored locally on your device** using IndexedDB (a browser database)
+- **All data is stored locally on your device** using:
+  - **IndexedDB** (browser database) - for purchase data and user preferences
+  - **Chrome Storage Local** - for notification tracking and temporary state
 - **No data is transmitted to external servers**
 - **No data is collected by us or any third parties**
 - **No analytics or tracking is performed**
 
 ### What Data We Store Locally
+
+**In IndexedDB (Purchases Store):**
 - Product names
 - Purchase prices
 - Purchase dates
 - Store/retailer names
 - Warranty periods
-- Receipt photos (if uploaded)
+- Receipt photos (if uploaded, stored as base64-encoded images)
 - Calculated expiration dates
 - Snooze dates (if you snooze reminders for specific purchases)
-- Product testing status (if you mark a product as tested)
-- Archived status (for expired warranties older than 30 days)
+- Product testing status (boolean flag and date when marked as tested)
+- Archived status (boolean flag and date when auto-archived for expired warranties older than 30 days)
+
+**In IndexedDB (Preferences Store):**
 - User preferences (default warranty period settings)
+
+**In Chrome Storage Local:**
+- Notification tracking data (timestamps of when notifications were sent, stored as `notified-{purchaseId}-{threshold}days`)
+- Temporary filter state (when clicking notifications, stored as `filterToProductId`)
 
 ### How We Use Your Data
 - Data is used solely within the extension to:
@@ -56,9 +66,11 @@ Warranty Manager ("we", "our", or "the extension") is committed to protecting yo
 ## Data Export and Deletion
 
 - You can export your data at any time using the Export feature (JSON or CSV format)
+- Exported data includes all purchase information stored in IndexedDB
 - You can delete individual purchases or all data by uninstalling the extension
-- All purchase data is stored in your browser's IndexedDB and can be cleared through browser settings
-- Notification tracking data and preferences are stored in Chrome's local storage and are cleared when you uninstall the extension
+- **Purchase data and preferences** are stored in your browser's IndexedDB and can be cleared through browser settings
+- **Notification tracking data** is stored in Chrome's local storage and is cleared when you uninstall the extension
+- All data is automatically removed when you uninstall the extension
 
 ## Third-Party Services
 

@@ -39,25 +39,42 @@
                     
                     <h3>Local Storage Only</h3>
                     <ul>
-                        <li><strong>All data is stored locally on your device</strong> using IndexedDB (a browser database)</li>
+                        <li><strong>All data is stored locally on your device</strong> using:
+                            <ul>
+                                <li><strong>IndexedDB</strong> (browser database) - for purchase data and user preferences</li>
+                                <li><strong>Chrome Storage Local</strong> - for notification tracking and temporary state</li>
+                            </ul>
+                        </li>
                         <li><strong>No data is transmitted to external servers</strong></li>
                         <li><strong>No data is collected by us or any third parties</strong></li>
                         <li><strong>No analytics or tracking is performed</strong></li>
                     </ul>
 
                     <h3>What Data We Store Locally</h3>
+                    
+                    <p><strong>In IndexedDB (Purchases Store):</strong></p>
                     <ul>
                         <li>Product names</li>
                         <li>Purchase prices</li>
                         <li>Purchase dates</li>
                         <li>Store/retailer names</li>
                         <li>Warranty periods</li>
-                        <li>Receipt photos (if uploaded)</li>
+                        <li>Receipt photos (if uploaded, stored as base64-encoded images)</li>
                         <li>Calculated expiration dates</li>
                         <li>Snooze dates (if you snooze reminders for specific purchases)</li>
-                        <li>Product testing status (if you mark a product as tested)</li>
-                        <li>Archived status (for expired warranties older than 30 days)</li>
+                        <li>Product testing status (boolean flag and date when marked as tested)</li>
+                        <li>Archived status (boolean flag and date when auto-archived for expired warranties older than 30 days)</li>
+                    </ul>
+
+                    <p><strong>In IndexedDB (Preferences Store):</strong></p>
+                    <ul>
                         <li>User preferences (default warranty period settings)</li>
+                    </ul>
+
+                    <p><strong>In Chrome Storage Local:</strong></p>
+                    <ul>
+                        <li>Notification tracking data (timestamps of when notifications were sent, stored as <code>notified-{purchaseId}-{threshold}days</code>)</li>
+                        <li>Temporary filter state (when clicking notifications, stored as <code>filterToProductId</code>)</li>
                     </ul>
 
                     <h3>How We Use Your Data</h3>
@@ -101,9 +118,11 @@
                     <h2>Data Export and Deletion</h2>
                     <ul>
                         <li>You can export your data at any time using the Export feature (JSON or CSV format)</li>
+                        <li>Exported data includes all purchase information stored in IndexedDB</li>
                         <li>You can delete individual purchases or all data by uninstalling the extension</li>
-                        <li>All purchase data is stored in your browser's IndexedDB and can be cleared through browser settings</li>
-                        <li>Notification tracking data and preferences are stored in Chrome's local storage and are cleared when you uninstall the extension</li>
+                        <li><strong>Purchase data and preferences</strong> are stored in your browser's IndexedDB and can be cleared through browser settings</li>
+                        <li><strong>Notification tracking data</strong> is stored in Chrome's local storage and is cleared when you uninstall the extension</li>
+                        <li>All data is automatically removed when you uninstall the extension</li>
                     </ul>
                 </section>
 
@@ -162,7 +181,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 Warranty Manager. All rights reserved.</p>
+                <p>&copy; 2025 Warranty Manager. All rights reserved.</p>
             </div>
         </div>
     </footer>

@@ -54,13 +54,14 @@ A Chrome extension to track warranties, manage purchases, and never miss a retur
 ### Managing Purchases
 
 - **Filter by Status:** Click filter pills (Action Needed, Expiring, Active, All, Expired) or click stats bar items
-- **Search:** Type in the search bar to find purchases by product name or store
-- **View Details:** Click on any purchase card to see full information
-- **Edit:** Click "Edit" button on any purchase card
-- **Actions:** 
-  - "✅ Dismiss Reminder" - Mark as tested and stop notifications
-  - "📋 File a Claim" - Get guidance on filing warranty claims
-  - "⏰ Remind Me Later" - Snooze notifications for 3, 7, or 14 days
+- **Search:** Type in the search bar to find purchases by product name or store (appears when you have 30+ purchases)
+- **Purchase Cards:** Each card displays all purchase details including product name, price, store, purchase date, warranty period, and expiration date
+- **Action Buttons (on each purchase card):**
+  - "📄 Receipt" - View receipt photo (if uploaded)
+  - "✅ Dismiss Reminder" - Mark as tested and stop notifications (only shown for urgent items)
+  - "📋 File Claim" - Get guidance on filing warranty claims (only shown for urgent items)
+  - "✏️ Edit" - Edit purchase details
+  - "🗑️ Delete" - Remove purchase from your list
 
 ### Data Management
 

@@ -4,14 +4,20 @@ A Chrome extension to track warranties, manage purchases, and never miss a retur
 
 ## Features
 
-- ✅ Add purchases manually with all details
-- ✅ View all purchases with sorting and filtering
-- ✅ Automatic warranty tracking with visual indicators
-- ✅ Browser notifications for expiring warranties
-- ✅ Receipt photo storage (up to 5MB per image)
-- ✅ Export to JSON/CSV
-- ✅ All data stored locally (IndexedDB)
-- ✅ Privacy-first: No cloud, no backend, no tracking
+- ✅ **Quick Add Mode** - Add purchases in seconds with just product name and warranty period
+- ✅ **Progressive Disclosure** - Optional fields (price, date, store, receipt) available when needed
+- ✅ **Smart Defaults** - Automatically fills today's date and remembers your preferred warranty period
+- ✅ **Visual Status Indicators** - Color-coded cards showing active, expiring, and expired warranties
+- ✅ **Actionable Stats Bar** - Click stats to filter purchases by status
+- ✅ **Filter Pills** - Easy filtering by Action Needed, Expiring, Active, All, or Expired
+- ✅ **Proactive Notifications** - Multi-threshold alerts at 30, 14, 7, and 1 days before expiration
+- ✅ **Snooze Reminders** - Temporarily hide notifications for specific purchases
+- ✅ **Mark as Tested** - Track which products you've already tested
+- ✅ **Auto-Archive** - Expired warranties older than 30 days are automatically archived
+- ✅ **Receipt Photo Storage** - Upload and store receipt images (up to 5MB per image)
+- ✅ **Import/Export** - Import from JSON/CSV or export your data anytime
+- ✅ **100% Local Storage** - All data stored locally (IndexedDB + Chrome Storage)
+- ✅ **Privacy-First** - No cloud, no backend, no tracking, no external servers
 
 ## Installation
 
@@ -30,43 +36,76 @@ A Chrome extension to track warranties, manage purchases, and never miss a retur
 
 ## Usage
 
+### Adding a Purchase
+
 1. Click the extension icon to open the popup
 2. Click "+ Add Purchase" to add a new purchase
-3. Fill in all required fields:
-   - Product Name (max 200 characters)
-   - Purchase Price (0 to 999,999,999)
-   - Purchase Date (cannot be in the future)
-   - Store/Retailer (max 200 characters)
-   - Warranty Period (1 to 36,500 days)
+3. **Quick Mode (Default):**
+   - Enter Product Name (required)
+   - Select Warranty Period (required, defaults to 365 days)
+   - Click "Save Purchase" - that's it!
+4. **Add More Details (Optional):**
+   - Click "+ Add more details" to show additional fields
+   - Purchase Price (optional)
+   - Purchase Date (optional, defaults to today)
+   - Store/Retailer (optional)
    - Receipt Photo (optional, max 5MB)
-4. View all purchases, filter by status, and sort as needed
-5. Use "Export" to download your data as JSON or CSV
-6. Use "🔔 Test Notifications" to verify notification functionality
+
+### Managing Purchases
+
+- **Filter by Status:** Click filter pills (Action Needed, Expiring, Active, All, Expired) or click stats bar items
+- **Search:** Type in the search bar to find purchases by product name or store
+- **View Details:** Click on any purchase card to see full information
+- **Edit:** Click "Edit" button on any purchase card
+- **Actions:** 
+  - "✅ Dismiss Reminder" - Mark as tested and stop notifications
+  - "📋 File a Claim" - Get guidance on filing warranty claims
+  - "⏰ Remind Me Later" - Snooze notifications for 3, 7, or 14 days
+
+### Data Management
+
+- **Export:** Click Settings → "📥 Export Data" → Choose JSON or CSV format
+- **Import:** Click Settings → "📤 Import Data" → Select JSON or CSV file
+- **Set Defaults:** Click Settings → "⚙️ Set Defaults" → Set default warranty period
+- **Test Notifications:** Click Settings → "🔔 Test Notification" to verify alerts work
 
 ## Privacy
 
-- **All data is stored locally** on your device using IndexedDB
-- **No data is transmitted** to any external servers
-- **No tracking or analytics** are performed
-- **Complete control** over your data
-- See [PRIVACY_POLICY.md](PRIVACY_POLICY.md) for details
+- **100% Local Storage** - All data stored on your device using IndexedDB and Chrome Storage
+- **No External Servers** - No data is transmitted to any external servers
+- **No Tracking** - No analytics, tracking, or data collection
+- **No Third-Party Services** - No integrations with external APIs or services
+- **Complete Control** - Export or delete your data anytime
+- **Transparent Permissions** - Only uses notifications, alarms, and storage (all explained in privacy policy)
+- See [PRIVACY_POLICY.md](PRIVACY_POLICY.md) for complete details
 
 ## Security
 
-- Input validation and sanitization
-- File size limits for uploads
-- XSS protection
-- Content Security Policy enforced
-- Minimal permissions (only notifications and alarms)
+- **Input Validation** - All fields validated with length limits and type checking
+- **XSS Protection** - All user inputs escaped and sanitized
+- **File Size Limits** - Receipt images limited to 5MB
+- **Content Security Policy** - Strict CSP enforced in manifest
+- **Minimal Permissions** - Only notifications, alarms, and storage (all justified)
+- **No External Requests** - Extension operates entirely offline
 
 ## Development
 
 The extension uses:
-- Manifest V3
-- IndexedDB for local storage
-- Chrome Notifications API
-- Chrome Alarms API
-- ES6 Modules
+- **Manifest V3** - Latest Chrome extension standard
+- **IndexedDB** - For purchase data storage
+- **Chrome Storage API** - For notification tracking and preferences
+- **Chrome Notifications API** - For warranty expiration alerts
+- **Chrome Alarms API** - For scheduled daily checks
+- **ES6 Modules** - Modern JavaScript module system
+- **Service Worker** - Background processing for notifications
+
+### Project Structure
+
+- `manifest.json` - Extension configuration
+- `popup.html/js/css` - Main UI components
+- `background.js` - Service worker for notifications
+- `db.js` - IndexedDB operations (popup context)
+- `db-worker.js` - IndexedDB operations (service worker context)
 
 ## Testing
 

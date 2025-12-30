@@ -27,7 +27,7 @@
         <div class="container">
             <div class="legal-content">
                 <h1>Privacy Policy for Warranty Manager</h1>
-                <p class="last-updated"><strong>Last Updated:</strong> December 2024</p>
+                <p class="last-updated"><strong>Last Updated:</strong> [Current Date]</p>
 
                 <section>
                     <h2>Introduction</h2>
@@ -54,6 +54,10 @@
                         <li>Warranty periods</li>
                         <li>Receipt photos (if uploaded)</li>
                         <li>Calculated expiration dates</li>
+                        <li>Snooze dates (if you snooze reminders for specific purchases)</li>
+                        <li>Product testing status (if you mark a product as tested)</li>
+                        <li>Archived status (for expired warranties older than 30 days)</li>
+                        <li>User preferences (default warranty period settings)</li>
                     </ul>
 
                     <h3>How We Use Your Data</h3>
@@ -61,7 +65,9 @@
                     <ul>
                         <li>Display your purchases and warranty information</li>
                         <li>Calculate warranty expiration dates</li>
-                        <li>Send browser notifications for expiring warranties</li>
+                        <li>Send browser notifications for expiring warranties (with tracking to prevent duplicates)</li>
+                        <li>Filter and sort your purchases</li>
+                        <li>Remember your preferences (default warranty period)</li>
                         <li>Export your data (at your request)</li>
                     </ul>
                 </section>
@@ -81,6 +87,14 @@
                         <li>Used to schedule daily checks for expiring warranties</li>
                         <li>All processing happens locally on your device</li>
                     </ul>
+
+                    <h3>Storage Permission</h3>
+                    <ul>
+                        <li>Used to store notification tracking data locally (prevents duplicate notifications for the same warranty threshold)</li>
+                        <li>Used to temporarily store filter state when clicking notifications (to show the relevant purchase)</li>
+                        <li>All data remains on your device and is never transmitted externally</li>
+                        <li>Notification tracking data includes timestamps of when notifications were sent (stored as <code>notified-{purchaseId}-{threshold}days</code>)</li>
+                    </ul>
                 </section>
 
                 <section>
@@ -88,7 +102,8 @@
                     <ul>
                         <li>You can export your data at any time using the Export feature (JSON or CSV format)</li>
                         <li>You can delete individual purchases or all data by uninstalling the extension</li>
-                        <li>All data is stored in your browser's IndexedDB and can be cleared through browser settings</li>
+                        <li>All purchase data is stored in your browser's IndexedDB and can be cleared through browser settings</li>
+                        <li>Notification tracking data and preferences are stored in Chrome's local storage and are cleared when you uninstall the extension</li>
                     </ul>
                 </section>
 

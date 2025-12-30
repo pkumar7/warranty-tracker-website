@@ -55,29 +55,37 @@
                     <div class="faq-item">
                         <h3>How do I add a purchase?</h3>
                         <div class="faq-answer">
+                            <p><strong>Quick Add Mode (Default):</strong></p>
                             <ol>
                                 <li>Click the extension icon to open the popup</li>
                                 <li>Click "+ Add Purchase"</li>
-                                <li>Fill in all required fields:
-                                    <ul>
-                                        <li>Product Name (max 200 characters)</li>
-                                        <li>Purchase Price (0 to 999,999,999)</li>
-                                        <li>Purchase Date (cannot be in the future)</li>
-                                        <li>Store/Retailer (max 200 characters)</li>
-                                        <li>Warranty Period (1 to 36,500 days)</li>
-                                        <li>Receipt Photo (optional, max 5MB)</li>
-                                    </ul>
-                                </li>
-                                <li>Click "Save" to add the purchase</li>
+                                <li>Enter Product Name (required)</li>
+                                <li>Select Warranty Period (required, defaults to 365 days)</li>
+                                <li>Click "Save Purchase" - that's it!</li>
                             </ol>
+                            <p><strong>Add More Details (Optional):</strong></p>
+                            <ol>
+                                <li>Click "+ Add more details" to show additional fields</li>
+                                <li>Purchase Price (optional)</li>
+                                <li>Purchase Date (optional, defaults to today)</li>
+                                <li>Store/Retailer (optional)</li>
+                                <li>Receipt Photo (optional, max 5MB)</li>
+                            </ol>
+                            <p>The extension uses smart defaults - today's date is automatically filled, and it remembers your preferred warranty period for faster entry.</p>
                         </div>
                     </div>
 
                     <div class="faq-item">
                         <h3>How do notifications work?</h3>
                         <div class="faq-answer">
-                            <p>Warranty Manager sends browser notifications when warranties are expiring soon. The extension checks daily for expiring warranties and sends notifications based on your stored data.</p>
-                            <p>To test notifications, click "🔔 Test Notifications" in the extension popup. You can disable notifications at any time through Chrome's notification settings.</p>
+                            <p>Warranty Manager sends proactive browser notifications with multi-threshold alerts at 30, 14, 7, and 1 days before expiration. The extension checks daily for expiring warranties and sends notifications based on your stored data.</p>
+                            <p>You can:</p>
+                            <ul>
+                                <li><strong>Snooze reminders:</strong> Temporarily hide notifications for specific purchases (3, 7, or 14 days)</li>
+                                <li><strong>Mark as tested:</strong> Dismiss reminders for products you've already tested</li>
+                                <li><strong>Test notifications:</strong> Click "🔔 Test Notification" in Settings to verify alerts work</li>
+                                <li><strong>Disable notifications:</strong> Turn off notifications at any time through Chrome's notification settings</li>
+                            </ul>
                         </div>
                     </div>
 
@@ -90,14 +98,24 @@
                     </div>
 
                     <div class="faq-item">
-                        <h3>How do I export my data?</h3>
+                        <h3>How do I export or import my data?</h3>
                         <div class="faq-answer">
+                            <p><strong>Export:</strong></p>
                             <ol>
                                 <li>Open the extension popup</li>
-                                <li>Click the "Export" button</li>
+                                <li>Click Settings → "📥 Export Data"</li>
                                 <li>Choose JSON or CSV format</li>
                                 <li>Your data will be downloaded to your device</li>
                             </ol>
+                            <p><strong>Import:</strong></p>
+                            <ol>
+                                <li>Open the extension popup</li>
+                                <li>Click Settings → "📤 Import Data"</li>
+                                <li>Select your JSON or CSV file</li>
+                                <li>Your purchases will be imported</li>
+                            </ol>
+                            <p><strong>Set Defaults:</strong></p>
+                            <p>Click Settings → "⚙️ Set Defaults" to set your preferred default warranty period.</p>
                         </div>
                     </div>
 
@@ -131,10 +149,25 @@
                         <div class="faq-answer">
                             <p>Warranty Manager requires minimal permissions:</p>
                             <ul>
-                                <li><strong>Notifications:</strong> To send alerts when warranties are expiring</li>
-                                <li><strong>Alarms:</strong> To schedule daily checks for expiring warranties</li>
+                                <li><strong>Notifications:</strong> To send alerts when warranties are expiring soon. Notifications are generated locally based on your stored data.</li>
+                                <li><strong>Alarms:</strong> To schedule daily checks for expiring warranties. All processing happens locally on your device.</li>
+                                <li><strong>Storage:</strong> To store notification tracking data locally (prevents duplicate notifications) and temporarily store filter state when clicking notifications.</li>
                             </ul>
-                            <p>All processing happens locally on your device.</p>
+                            <p>All data remains on your device and is never transmitted externally. See our <a href="privacy.html">Privacy Policy</a> for complete details.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>How do I filter and manage my purchases?</h3>
+                        <div class="faq-answer">
+                            <p>Warranty Manager offers several ways to organize your purchases:</p>
+                            <ul>
+                                <li><strong>Filter Pills:</strong> Click filter pills (Action Needed, Expiring, Active, All, Expired) to quickly filter your purchases</li>
+                                <li><strong>Stats Bar:</strong> Click stats bar items to filter purchases by status</li>
+                                <li><strong>Search:</strong> Type in the search bar to find purchases by product name or store</li>
+                                <li><strong>Visual Indicators:</strong> Color-coded cards show active, expiring, and expired warranties at a glance</li>
+                                <li><strong>Auto-Archive:</strong> Expired warranties older than 30 days are automatically archived to keep your list clean</li>
+                            </ul>
                         </div>
                     </div>
 
